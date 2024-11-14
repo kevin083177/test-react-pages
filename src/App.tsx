@@ -6,14 +6,13 @@ function App() {
   const [score, setScore] = useState(0);
   return (
       <Routes>  
-        <Route path="/" element={<Home />}>
-          <Route path="about" element={<About />} />
-          <Route path="characters" element={<Characters />} />
-          <Route path="quiz_information" element={<Quiz_Information />} />
-          <Route path="quiz_question" element={<Quiz_Question score={score} setScore={setScore} />} />
-          <Route path="failed" element={<Failed score={score}/>} />
-          <Route path="pass" element={<Pass score={score}/>} />
-        </Route>
+        <Route path="/" element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route path="characters" element={<Characters />} />
+        <Route path="quiz_information" element={<Quiz_Information />} />
+        <Route path="quiz_question" element={<Quiz_Question score={score} setScore={setScore} />} />
+        <Route path="failed" element={<Failed score={score}/>} />
+        <Route path="pass" element={<Pass score={score}/>} />
       </Routes>
   );
 }
