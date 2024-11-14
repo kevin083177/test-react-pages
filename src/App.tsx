@@ -7,12 +7,12 @@ function App() {
   return (
       <Routes>  
         <Route path="/test-react-pages" element={<Home />} />
-        <Route path="/test-react-pages/about" element={<About />} />
-        <Route path="/test-react-pages/characters" element={<Characters />} />
-        <Route path="/test-react-pages/quiz_information" element={<Quiz_Information />} />
-        <Route path="/test-react-pages/quiz_question" element={<Quiz_Question score={score} setScore={setScore} />} />
-        <Route path="/test-react-pages/failed" element={<Failed score={score}/>} />
-        <Route path="/test-react-pages/pass" element={<Pass score={score}/>} />
+        <Route path="/about" element={<About />} />
+        <Route path="/characters" element={<Characters />} />
+        <Route path="/quiz_information" element={<Quiz_Information />} />
+        <Route path="/quiz_question" element={<Quiz_Question score={score} setScore={setScore} />} />
+        <Route path="/failed" element={<Failed score={score}/>} />
+        <Route path="/pass" element={<Pass score={score}/>} />
       </Routes>
   );
 }
@@ -255,6 +255,7 @@ const Quiz_Information = () => {
     </section>
   );
 };
+//@ts-ignore
 function Quiz_Question (score: any, setScore: any) {
   const questions =[
     {
