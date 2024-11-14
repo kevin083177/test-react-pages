@@ -1,28 +1,52 @@
-import './App.css'
-import { useNavigate, BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-const PageTwo = () => {
-  return (
-    <>
-      <section className='page2'>
-        <a className="btn" href='/'>hello</a>
-      </section>
-    </>
-  );
-};
+import { Routes, Route, Link } from "react-router-dom"; // +
+// +
 function App() {
   return (
     <>
-      <section className='home'>
-        <a className='btn' href='/page2'>hii</a>
-      </section>
-
-      <Router>
-        <Routes>
-          <Route path="/page2" element={<PageTwo />} />
-        </Routes>
-      </Router>
+      <main>
+        <h2>Welcome to the homepage!</h2>
+        <p>You can do this, I believe in you.</p>
+      </main>
+      <nav>
+        <Link to="/about">About</Link>
+      </nav>
+      <Routes>
+        <Route path="/about" element={<About />} />
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
+// + Home() & About()
+// @ts-ignore
+function Home() {
+  return (
+    <>
+      <main>
+        <h2>Welcome to the homepage!</h2>
+        <p>You can do this, I believe in you.</p>
+      </main>
+      <nav>
+        <Link to="/about">About</Link>
+      </nav>
+    </>
+  );
+}
+
+function About() {
+  return (
+    <>
+      <main>
+        <h2>Who are we?</h2>
+        <p>
+          That feels like an existential question, don't you
+          think?
+        </p>
+      </main>
+      <nav>
+        <Link to="/">Home</Link>
+      </nav>
+    </>
+  );
+}
+export default App;
