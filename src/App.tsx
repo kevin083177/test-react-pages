@@ -8,8 +8,8 @@ function App() {
       <Routes>  
         <Route path="/test-react-pages" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/characters" element={<Characters />} />
-        <Route path="/quiz_information" element={<Quiz_Information />} />
+        <Route path="characters" element={<Characters />} />
+        <Route path="quiz_information" element={<Quiz_Information />} />
         <Route path="/quiz_question" element={<Quiz_Question score={score} setScore={setScore} />} />
         <Route path="/failed" element={<Failed score={score}/>} />
         <Route path="/pass" element={<Pass score={score}/>} />
