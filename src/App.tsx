@@ -6,13 +6,12 @@ function App() {
   const [score, setScore] = useState(0);
   return (
       <Routes>  
-        <Route path="" element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="characters" element={<Characters />} />
-        <Route path="quiz_information" element={<Quiz_Information />} />
-        <Route path="quiz_question" element={<Quiz_Question score={score} setScore={setScore} />} />
-        <Route path="failed" element={<Failed score={score}/>} />
-        <Route path="pass" element={<Pass score={score}/>} />
+        <Route path="/" element={<Home />} />
+        <Route path="/characters" element={<Characters />} />
+        <Route path="/quiz_information" element={<Quiz_Information />} />
+        <Route path="/quiz_question" element={<Quiz_Question score={score} setScore={setScore} />} />
+        <Route path="/failed" element={<Failed score={score}/>} />
+        <Route path="/pass" element={<Pass score={score}/>} />
       </Routes>
   );
 }
@@ -390,20 +389,4 @@ const Failed = ({score}) => {
   );
 };
 
-function About() {
-  return (
-    <>
-      <main>
-        <h2>Who are we?</h2>
-        <p>
-          That feels like an existential question, don't you
-          think?
-        </p>
-      </main>
-      <nav>
-        <Link to="/test-react-pages">Home</Link>
-      </nav>
-    </>
-  );
-}
 export default App;
