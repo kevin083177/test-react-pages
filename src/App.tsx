@@ -33,7 +33,9 @@ function Home() {
               <div className='col-md-16'>
                 <h1 className='display-1'>吉伊卡哇の小天地</h1>
                 <a className='btn' onClick={scrollToIntro} style={{cursor: 'pointer'}}>了解更多</a>
-                <a className='btn' href='/characters'>認識角色</a>
+                <a className='btn'>
+                  <Link to="/characters"></Link>
+                  認識角色</a>
               </div>
             </div>
           </div>
