@@ -6,7 +6,7 @@ function App() {
   const [score, setScore] = useState(0);
   return (
       <Routes>  
-        <Route path="/" element={<Home />} />
+        <Route path="" element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="characters" element={<Characters />} />
         <Route path="quiz_information" element={<Quiz_Information />} />
