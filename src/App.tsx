@@ -7,7 +7,7 @@ function App() {
   return (
       <Routes>  
         <Route path="/test-react-pages" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/test-react-pages/about" element={<About />} />
       </Routes>
   );
 }
@@ -22,7 +22,7 @@ function Home() {
         <img src={bg}></img>
       </main>
       <nav>
-        <Link to="/about">About</Link>
+        <Link to="/test-react-pages/about">About</Link>
       </nav>
     </>
   );
