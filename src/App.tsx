@@ -6,13 +6,13 @@ function App() {
   const [score, setScore] = useState(0);
   return (
       <Routes>  
-        <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="characters" element={<Characters />} />
-        <Route path="quiz_information" element={<Quiz_Information />} />
-        <Route path="quiz_question" element={<Quiz_Question score={score} setScore={setScore} />} />
-        <Route path="failed" element={<Failed score={score}/>} />
-        <Route path="pass" element={<Pass score={score}/>} />
+        <Route path="/test-react-pages" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/characters" element={<Characters />} />
+        <Route path="/quiz_information" element={<Quiz_Information />} />
+        <Route path="/quiz_question" element={<Quiz_Question score={score} setScore={setScore} />} />
+        <Route path="/failed" element={<Failed score={score}/>} />
+        <Route path="/pass" element={<Pass score={score}/>} />
       </Routes>
   );
 }
@@ -32,7 +32,7 @@ function Home() {
               <div className='col-md-16'>
                 <h1 className='display-1'>吉伊卡哇の小天地</h1>
                 <a className='btn' onClick={scrollToIntro} style={{cursor: 'pointer'}}>了解更多</a>
-                <a className='btn' href='/characters'>認識角色</a>
+                <a className='btn' href='/test-react-pages/characters'>認識角色</a>
               </div>
             </div>
           </div>
