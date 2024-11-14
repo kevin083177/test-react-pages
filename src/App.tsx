@@ -1,4 +1,4 @@
-import { Link, Routes, Route} from 'react-router-dom';
+import { useNavigate, Link, Routes, Route} from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import './App.css';
 // +
@@ -7,12 +7,12 @@ function App() {
   return (
       <Routes>  
         <Route path="/test-react-pages" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="characters" element={<Characters />} />
-        <Route path="quiz_information" element={<Quiz_Information />} />
-        <Route path="/quiz_question" element={<Quiz_Question score={score} setScore={setScore} />} />
-        <Route path="/failed" element={<Failed score={score}/>} />
-        <Route path="/pass" element={<Pass score={score}/>} />
+        <Route path="/test-react-pages/about" element={<About />} />
+        <Route path="/test-react-pages/characters" element={<Characters />} />
+        <Route path="/test-react-pages/quiz_information" element={<Quiz_Information />} />
+        <Route path="/test-react-pages/quiz_question" element={<Quiz_Question score={score} setScore={setScore} />} />
+        <Route path="/test-react-pages/failed" element={<Failed score={score}/>} />
+        <Route path="/test-react-pages/pass" element={<Pass score={score}/>} />
       </Routes>
   );
 }
@@ -232,9 +232,10 @@ function Characters() {
 };
 const Quiz_Information = () => {
   const [checked, setChecked] = useState(false);
+  const navigate = useNavigate();
   function btn_question(){
     if(checked){
-      <Link to="/test-react-pages"></Link>
+      navigate('/test-react-pages/quiz_question')
     }
     else{
       alert("請先閱讀須知並勾選按鈕");
@@ -300,12 +301,12 @@ function Quiz_Question (score: any, setScore: any) {
     }]
     const answer = ['倉鼠', '黃色', '淺粉色', '巨大蛋包飯', '烏薩奇', '超級滑順的布丁', 'B區', '曼波魚', '風苗拉麵', '討伐'];
     const [selectedAnswers, setSelectedAnswers] = useState(Array(questions.length).fill(null));
+    const navigate = useNavigate();
 
     const handleOptionChange = (questionIndex:number, option:String) => {
       setSelectedAnswers((prevAnswers) => {
         const newAnswers = [...prevAnswers];
         newAnswers[questionIndex] = option;
-        console.log(newAnswers);
         return newAnswers;
       });
     };
@@ -323,10 +324,12 @@ function Quiz_Question (score: any, setScore: any) {
       });
 
       setScore(newScore);
-      if(newScore < 60)
-        <Link to='/test-react-pages/failed'></Link>
-      else
-        <Link to='/test-react-pages/pass'></Link>
+      if(newScore < 60){
+        navigate('/test-react-pages/failed')
+      }
+      else{
+        navigate('/test-react-pages/pass')
+      }
 
     };
   return (
