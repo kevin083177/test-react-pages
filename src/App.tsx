@@ -6,7 +6,7 @@ function App() {
   const [score, setScore] = useState(0);
   return (
       <Routes>  
-        <Route path="/test-react-pages" element={<Home />}>
+        <Route path="/" element={<Home />}>
           <Route path="about" element={<About />} />
           <Route path="characters" element={<Characters />} />
           <Route path="quiz_information" element={<Quiz_Information />} />
@@ -34,8 +34,8 @@ function Home() {
                 <h1 className='display-1'>吉伊卡哇の小天地</h1>
                 <a className='btn' onClick={scrollToIntro} style={{cursor: 'pointer'}}>了解更多</a>
                 <a className='btn'>
-                  <Link to="/characters"></Link>
-                  認識角色</a>
+                  <Link to="/characters">認識腳色</Link>
+                </a>
               </div>
             </div>
           </div>
